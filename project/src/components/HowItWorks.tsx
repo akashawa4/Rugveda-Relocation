@@ -12,11 +12,11 @@ interface StepProps {
 const Step = ({ icon, number, title, description, isLast }: StepProps) => {
   return (
     <div className="flex flex-col items-center text-center relative group">
-      <div className="relative">
-        <div className="absolute inset-0 w-24 h-24 rounded-2xl z-0 blur-xl opacity-60 bg-gradient-to-tr from-blue-400 via-blue-600 to-cyan-400 animate-pulse-slow group-hover:scale-110 group-hover:opacity-80 transition-all duration-500" />
-        <div className="w-24 h-24 rounded-2xl bg-blue-600 flex items-center justify-center text-white mb-4 relative z-10 transition-all duration-300 group-hover:scale-110 group-hover:shadow-2xl group-hover:bg-blue-700 transform rotate-45 group-hover:rotate-0">
-          <div className="transform -rotate-45 group-hover:rotate-0 transition-transform duration-300">
-            {icon}
+      <div className="relative flex items-center justify-center mb-4">
+        <div className="w-24 h-24 flex items-center justify-center">
+          <div className="absolute inset-0 rounded-2xl border-4 border-blue-400 animate-rotate-slower shadow-lg" style={{animationDelay: '0s'}} />
+          <div className="relative z-10 flex items-center justify-center w-16 h-16">
+            {React.cloneElement(icon as React.ReactElement, { className: 'h-12 w-12 text-blue-600' })}
           </div>
         </div>
         <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-orange-500 flex items-center justify-center text-white font-bold text-sm shadow-lg border-2 border-white z-20 animate-bounce-slow">
@@ -31,7 +31,7 @@ const Step = ({ icon, number, title, description, isLast }: StepProps) => {
           </div>
         </div>
       )}
-      <h3 className="text-xl font-bold text-gray-800 mb-3 mt-4 group-hover:text-blue-600 transition-colors">
+      <h3 className="text-xl font-bold text-gray-900 mb-3 mt-4 group-hover:text-blue-600 transition-colors">
         {title}
       </h3>
       <p className="text-gray-600 max-w-xs mx-auto leading-relaxed">

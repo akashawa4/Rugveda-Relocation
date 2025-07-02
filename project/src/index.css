@@ -43,6 +43,15 @@
     animation: expandLine 1.5s ease-out forwards;
   }
 
+  .animate-rotate-slow {
+    animation: rotateSlow 3s linear infinite;
+  }
+
+  .animate-rotate-slower {
+    animation: rotateSlow 8s linear infinite !important;
+    animation-delay: 0s !important;
+  }
+
   /* Professional hover effects */
   .hover-lift {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -84,6 +93,15 @@
   }
   to {
     transform: scaleX(1);
+  }
+}
+
+@keyframes rotateSlow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 
